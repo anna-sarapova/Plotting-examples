@@ -9,6 +9,8 @@ np.random.seed(19680801)
 y = np.cumsum(np.random.randn(N))
 
 fig, axs = plt.subplots(3, 1, constrained_layout=True, figsize=(6, 6))
+# automatically adjusts subplots and decorations like legends
+#         and colorbars so that they fit in the figure window
 lims = [(np.datetime64('2005-02'), np.datetime64('2005-04')),
         (np.datetime64('2005-02-03'), np.datetime64('2005-02-15')),
         (np.datetime64('2005-02-03 11:00'), np.datetime64('2005-02-04 13:20'))]

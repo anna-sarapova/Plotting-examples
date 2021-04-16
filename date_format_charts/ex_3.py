@@ -9,6 +9,8 @@ numpy.random.seed(total_bars)
 dates = pandas.date_range('3/4/2020',
                           periods=total_bars,
                           freq='m')
+# periods - Number of periods to generate
+# freq - default ‘D’ -  strings frequency
 
 diff = pandas.DataFrame(
     data=numpy.random.randn(total_bars),

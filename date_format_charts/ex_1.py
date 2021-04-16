@@ -10,15 +10,20 @@ import matplotlib.cbook as cbook
 data = cbook.get_sample_data('goog.npz', np_load=True)['price_data']
 
 fig, ax = plt.subplots()
+# plt.subplots() - is a function that returns a tuple containing a figure and axes object(s)
+# fig, ax = plt.subplots() - unpack this tuple into the variables fig and ax
 ax.plot('date', 'adj_close', data=data)
 
 # Major ticks every 6 months.
 fmt_half_year = mdates.MonthLocator(interval=6)
+# interval - means the interval between months of the year
+# it is shown the data of the 1st and 7th month of the year
 ax.xaxis.set_major_locator(fmt_half_year)
 
 # Minor ticks every month.
 fmt_month = mdates.MonthLocator()
 ax.xaxis.set_minor_locator(fmt_month)
+# minor_locator - represents the small intervals between the main points on the axes
 
 # Text in the x axis will be displayed in 'YYYY-mm' format.
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
